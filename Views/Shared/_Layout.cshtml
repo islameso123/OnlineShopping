@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - OnlineShopping</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="~/css/site.css" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+    </environment>
+    
+    
+    
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="~/css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="~/css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="~/css/bootstrap.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="~/css/flexslider.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="~/css/style.css">
+
+    <!-- Modernizr JS -->
+    <script src="~/js/modernizr-2.6.2.min.js"></script>
+    
+    
+
+</head>
+
+
+
+<body style="margin: 0px; padding: 0px;">
+
+
+    <nav class="fh5co-nav" role="navigation" style="background-color: whitesmoke;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-xs-2">
+                    <div id="fh5co-logo"><a asp-controller="Shopping" asp-action="Index">Shop.</a></div>
+                </div>
+                <div class="col-md-6 col-xs-6 text-center menu-1">
+                    <ul>
+                        <li class="has-dropdown">
+                            <a asp-controller="Shopping" asp-action="Product">Shop</a>
+                            <ul class="dropdown">
+                                <li><a asp-controller="Shopping" asp-action="Single">Single Shop</a></li>
+                            </ul>
+                        </li>
+                        <li><a asp-controller="Shopping" asp-action="About">About</a></li>
+                        <li class="has-dropdown">
+                            <a asp-controller="Shopping" asp-action="Services">Services</a>
+                            <ul class="dropdown">
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">eCommerce</a></li>
+                                <li><a href="#">Branding</a></li>
+                                <li><a href="#">API</a></li>
+                            </ul>
+                        </li>
+                        <li><a asp-controller="Shopping" asp-action="Contact">Contact</a></li>
+
+                        <li class="has-dropdown bg-info text-center">
+                            <a>Admin ></a>
+                            <ul class="dropdown">
+                                <li><a asp-controller="Categories" asp-action="index">Categories</a></li>
+                                <li><hr /></li>
+                                <li><a asp-controller="Products" asp-action="index">Products</a></li>
+                                <li><hr /></li>
+                                <li><a asp-controller="Customers" asp-action="index">Customers</a></li>
+                                <li><hr /></li>
+                                <li><a asp-controller="Suppliers" asp-action="index">Suppliers</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-md-3 col-xs-4 text-right hidden-xs menu-2">
+                    <ul>
+                        <li class="search">
+                            <div class="input-group">
+                                <input type="text" placeholder="Search.." style="border-radius: 20px;">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+                                </span>
+                            </div>
+                        </li>
+                        <li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+
+    @*<nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">OnlineShopping</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a asp-area="" asp-controller="Shopping" asp-action="Index">Home</a></li>
+                    <li><a asp-area="" asp-controller="Shopping" asp-action="About">About</a></li>
+                    <li><a asp-area="" asp-controller="Shopping" asp-action="Contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>*@
+
+
+<partial name="_CookieConsentPartial"/>
+
+
+
+
+<div class="container-fluid body-content">
+    @RenderBody()
+    <hr/>
+    <footer>
+        <p>&copy; 2018 - OnlineShopping &trade;</p>
+    </footer>
+</div>
+
+
+
+
+<environment include="Development">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</environment>
+<environment exclude="Development">
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
+            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jQuery"
+            crossorigin="anonymous"
+            integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT">
+    </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/bootstrap.min.js"
+            asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
+            crossorigin="anonymous"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
+    </script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+</environment>
+
+
+
+
+@*@RenderSection("Scripts", required: false);*@
+
+<!-- jQuery -->
+<script src="~/js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="~/js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="~/js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="~/js/jquery.waypoints.min.js"></script>
+<!-- Carousel -->
+<script src="~/js/owl.carousel.min.js"></script>
+<!-- countTo -->
+<script src="~/js/jquery.countTo.js"></script>
+<!-- Flexslider -->
+<script src="~/js/jquery.flexslider-min.js"></script>
+<!-- Google Map -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+<script src="~/js/google_map.js"></script>
+<!-- Main -->
+<script src="~/js/main.js"></script>
+</body>
+</html>

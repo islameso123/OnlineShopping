@@ -1,0 +1,54 @@
+﻿@model OnlineShopping.Models.Product
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <br /><br /><br /><br /><br />
+
+    <h2>Edit</h2>
+
+    <h4>Product</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ID" />
+                <div class="form-group">
+                    <label asp-for="name" class="control-label"></label>
+                    <input asp-for="name" class="form-control" />
+                    <span asp-validation-for="name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="stock" class="control-label"></label>
+                    <input asp-for="stock" class="form-control" />
+                    <span asp-validation-for="stock" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="catID" class="control-label"></label>
+                    <select asp-for="catID" class="form-control" asp-items="ViewBag.catID"></select>
+                    <span asp-validation-for="catID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="price" class="control-label"></label>
+                    <input asp-for="price" class="form-control" />
+                    <span asp-validation-for="price" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="siD" class="control-label"></label>
+                    <select asp-for="siD" class="form-control" asp-items="ViewBag.siD"></select>
+                    <span asp-validation-for="siD" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index" class="btn btn-default">Back to List</a>
+    </div>
+</div>
